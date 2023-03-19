@@ -3,7 +3,7 @@
 // Copyright (c) 2022 The Dogecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
+#include<iostream>
 #if defined(HAVE_CONFIG_H)
 #include "config/bitcoin-config.h"
 #endif
@@ -320,7 +320,7 @@ void OnRPCPreCommand(const CRPCCommand& cmd)
 std::string HelpMessage(HelpMessageMode mode)
 {
     const bool showDebug = GetBoolArg("-help-debug", false);
-
+    std::cout << "===Entering Help Function=== mode=" << mode;
     // When adding new options to the categories, please keep and ensure alphabetical ordering.
     // Do not translate _(...) -help-debug options, Many technical terms, and only a very small audience, so is unnecessary stress to translators.
     std::string strUsage = HelpMessageGroup(_("Options:"));

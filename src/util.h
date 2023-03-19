@@ -10,7 +10,7 @@
  */
 #ifndef BITCOIN_UTIL_H
 #define BITCOIN_UTIL_H
-
+#include<iostream>
 #if defined(HAVE_CONFIG_H)
 #include "config/bitcoin-config.h"
 #endif
@@ -62,7 +62,9 @@ extern const char * const BITCOIN_PID_FILENAME;
  */
 inline std::string _(const char* psz)
 {
+    std::cout << "::Starting the translation function:: value of psz" << psz;
     boost::optional<std::string> rv = translationInterface.Translate(psz);
+    std::cout << "value of rv after Translate call() is :" << rv << "pointer contents"<<*rv;
     return rv ? (*rv) : psz;
 }
 

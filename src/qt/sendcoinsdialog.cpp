@@ -276,6 +276,10 @@ void SendCoinsDialog::on_sendButton_clicked()
         {
             if(rcp.label.length() > 0) // label with address
             {
+                if (rcp.label.length() > 45) 
+                {
+                    rcp.label = rcp.label.left(45).append("...")
+                }
                 recipientElement = tr("%1 to %2").arg(amount, GUIUtil::HtmlEscape(rcp.label));
                 recipientElement.append(QString(" (%1)").arg(address));
             }

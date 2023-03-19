@@ -8,7 +8,7 @@
 #endif
 
 #include "bitcoingui.h"
-
+#include<iostream>
 #include "chainparams.h"
 #include "clientmodel.h"
 #include "guiconstants.h"
@@ -95,11 +95,14 @@ static void InitMessage(const std::string &message)
  */
 static std::string Translate(const char* psz)
 {
+	std::cout<<"bitcoin.cpp translate called() ln 98 return value::"<<QCoreApplication::translate("bitcoin-core", psz).toStdString();
+	
     return QCoreApplication::translate("bitcoin-core", psz).toStdString();
 }
 
 static QString GetLangTerritory()
 {
+	std::cout<<"bitcoin.cpp GetLangTerritory() ln 105 ";
     QSettings settings;
     // Get desired locale (e.g. "de_DE")
     // 1) System default language
